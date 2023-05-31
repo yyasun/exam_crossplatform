@@ -1,0 +1,19 @@
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Перевірка на анаграму</ion-card-title>
+      Дана програма перевіряє чи є дві строки анаграмою одне одного включаючі пробіли.
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>String 1</ion-label>
+        <ion-input type="text" formControlName="string1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>String 2</ion-label>
+        <ion-input type="text" formControlName="string2"></ion-input>
+      </ion-item>
+      <ion-button type="submit" [disabled]="!inputForm.valid">Submit</ion-button>
+    </ion-card-content>
+  </ion-card>
+</form>

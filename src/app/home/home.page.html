@@ -1,20 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header/>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <app-form (stringsInputSubmited)="checkIfStringsAreAnagrams($event)"></app-form>
+  <ion-card *ngIf="show_output">
+    <ion-card-header>
+      <ion-card-title>Output</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="isAnagram">Дані строки є анаграмою</ion-card-content>
+    <ion-card-content *ngIf="!isAnagram">Дані строки не є анаграмою</ion-card-content>
+  </ion-card>
 </ion-content>
